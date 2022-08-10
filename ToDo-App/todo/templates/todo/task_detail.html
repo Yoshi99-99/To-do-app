@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="card mt-5">
+    <div class="card-body">
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.description }}</p>
+        <p class="ext-muted">{{ task.deadline }}</p>
+        <a href="{% url 'task-edit' task.pk %}" class="btn btn-outline-secondary">タスクの編集</a>
+        <a href="{% url 'task-delete' task.pk %}" class="btn btn-outline-danger">タスクの削除</a>
+    </div>
+</div>
+
+{% endblock content %}
